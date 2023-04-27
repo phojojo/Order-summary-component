@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Red+Hat+Display:wght@500;700;900&display=swap');
+/* imports go at the very top */
+
+.root{ /* created our own default colors */
+    --Pale-blue: hsl(225, 100%, 94%);
+    --Bright-blue: hsl(245, 75%, 52%);
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --Desaturated-blue: hsl(224, 23%, 55%);
+    --Dark-blue: hsl(223, 47%, 23%);
+}
+
+* { /* default style */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+}
+.bg__image{/*creates wave pattern in background*/
+    background: url('./images/pattern-background-desktop.svg') no-repeat center/cover;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;  /* sets bg into bg for text to appear*/
+}
+
+body{ /* changes font in header and <p>*/
+    font-family: "Red Hat Display", sans-serif;
+    background-color: var(--Pale-blue); /* created variable within parameters entered pale blue to change background color */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+button{ /* changes font in buttons */
+    font-family: inherit; /* inherits font family of body */
+}
+
+.container h1{
+    color:hsl(223, 47%, 23%);
+    margin: 10px 0;
+}
+
+p{
+    font-size: 16px;
+    line-height: 1.6;
+    color:hsl(224, 23%, 55%)
+}
+
+.btn{
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor:pointer;
+    transition: all 0.2s ease-in-out;
+}
+.btn-change{
+    background-color: transparent;
+    color: blue;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+.btn-primary{
+    background-color:hsl(245, 75%, 52%);
+    color:white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-primary:hover,
+.btn-change:hover{
+    opacity: 0.8;
+}
+
+.btn-secondary{
+    background-color: transparent;
+    color: hsl(224, 23%, 55%);
+
+}
+
+.btn-secondary:hover{/* whenever cursor hovers over cancel order button color changes */
+    color: hsl(223, 47%, 23%);
+}
+.container{ /* creates bg for text */
+    background-color: white; /* color*/
+    margin: 20px; /* width of box */
+    padding-bottom: 20px;
+    border-radius: 5px; /* rounds the corners */
+    box-shadow: 3px 3px 3px hsl(228, 45%, 44%, .15); /* creates a slight shadow behind bg  */
+}
+
+.container p.desc{
+    padding: 0 40px;
+}
+
+.container img.hero { /* targets the image within class hero */
+    width: 100%;
+    border-radius: 5px 5px 0 0 ;
+}
+
+.container .pricing{
+    margin: 30px auto;
+    padding: 10px;
+    background-color: hsl(225, 100%, 98%);
+    width: 90%;
+    border-radius: 5px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .pricing article{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .pricing article img{
+    margin-right: 10px;
+}
+/*attribution*/
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media(min-width: 768px){/* allows the background to adapt to window size*/
+    .bg__image{
+        background: url("./images/pattern-background-desktop.svg") no-repeat center/cover;
+        height: 50vh;
+    }
+
+    .container{
+        width: 500px; /* centers card */
+    }
+}
